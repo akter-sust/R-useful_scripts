@@ -11,6 +11,7 @@ if (length(args)==0) {
 dsc <- desc::description$new()
 dp <- dsc$get_deps()
 for(i in 1:nrow(dp)){
-    devtools::install_version(dp[i,'package'], version=gsub("== ", "" ,dp[i,'version']), upgrade="never", repos="http://cran.us.r-project.org")
+    version = strsplit(dp[i,'version'], " ")[[1]][-1]
+    devtools::install_version(dp[i,'package'], version=version, upgrade="never", repos="http://cran.us.r-project.org")
 }
 
