@@ -1,4 +1,10 @@
 #!/usr/bin/env Rscript
+"""
+to run this script use following command
+Rscript --vanilla install_dependent_packages.R <the folder path of the project description file>
+i.e. Rscript --vanilla install_dependent_packages.R /opt/app/r-package/
+"""
+
 args = commandArgs(trailingOnly=TRUE)
 
 if (length(args)==0) {
